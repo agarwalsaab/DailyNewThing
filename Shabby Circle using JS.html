@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Canvas Design</title>
+	<style type="text/css">
+		canvas{
+			border: 1px solid yellow;
+		}
+		body{
+			margin: 0;
+		}
+	</style>
+</head>
+<body>
+	<canvas></canvas>
+	<script type="text/javascript">
+		var canvas = document.querySelector('canvas');		
+		canvas.width = window.innerWidth;
+		canvas.height = window.innerHeight;
+
+		var c = canvas.getContext('2d');
+
+		var x = Math.random() * innerWidth;
+		var y = Math.random() * innerHeight;
+		var dx = 1;
+		var dy = 1;
+		var f = true;
+		var g = true;
+		var radius = 30;
+		console.log(innerHeight);
+		console.log(innerWidth);
+		function animate(){
+			
+			requestAnimationFrame(animate);
+			c.beginPath();
+			c.clearRect(0, 0, innerWidth, innerHeight);
+			
+			c.arc(x, y, radius, 0, Math.PI*2, false);
+			c.strokeStyle = "blue";
+			c.stroke();
+
+
+			if(x + radius > innerWidth || x-radius < 0){
+				dx = -dx;
+			}
+			if(y + radius > innerHeight || y-radius <0){
+				dy = - dy;
+			}
+			x+=dx;
+			y+=dy;
+		}
+		animate();
+	</script>
+</body>
+</html>
