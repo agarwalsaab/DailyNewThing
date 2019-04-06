@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Weight Converter</title>
+	<style type="text/css">
+		#main{
+			text-align:center;
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			transform: translate(-50%, -50%);
+			width: 350px;
+			height: 150px;
+			background-color: #c6d8f4;
+			border: 1px solid black;
+			border-radius: 5px;
+			padding:10px;
+		}
+		#answer{
+			margin-top: 15px;
+			border: 1px solid black;
+			border-radius: 2px;
+			width: 100%;
+			display: none;
+		}
+		input[type="submit"]{
+			margin-top: 10px;
+			width: 100%;
+		}
+	</style>
+</head>
+<body>
+	<div id="main">
+		<div id="data">
+			<select id="leeft">
+				<option value="mg">Miligram</option>
+				<option value="gm">Gram</option>
+				<option value="kg">Kilogram</option>
+				<option value="qt">Quintal</option>
+			</select>
+			<input type="number" name="query" placeholder="Enter value" id="value">
+			<select id="right">
+				<option value="mg">Miligram</option>
+				<option value="gm">Gram</option>
+				<option value="kg">Kilogram</option>
+				<option value="qt">Quintal</option>
+			</select>
+			<br>
+			<input type="submit" name="convert" placeholder="convert" onclick="convert()">
+		</div>
+		<div id="answer">
+			<p id="ans"></p>
+		</div>
+		
+	</div>
+	
+
+</body>
+</html>
+<script type="text/javascript">
+
+	//function block
+	function convert(){
+		var x = document.getElementById("value").value;
+		var l = document.getElementById("leeft");
+		l = l.options[l.selectedIndex].value;
+		var r = document.getElementById("right");
+		r = r.options[r.selectedIndex].value;
+
+		document.getElementById('answer').style.display="block";
+		//convert to kg
+		if(l=='gm'){
+			x=x/1000;
+		}		
+		else if(l=='kg'){
+			x=x;
+		}
+		else if(l=='qt'){
+			x=x*100;
+		}
+		else if(l='mg'){
+			x=x/10000;
+		}
+		
+		//convert to their asked format
+		if(r=='gm'){
+			x=x*1000;
+		}
+		else if(r=='kg'){
+			x=x;
+		}
+		else if(r=='mg'){
+			x=x*10000;
+		}
+		else if(r=='qt'){
+			x=x/100;
+		}
+		document.getElementById("ans").innerHTML=x;
+	}
+</script>
