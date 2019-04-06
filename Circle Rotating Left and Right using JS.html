@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Canvas Design</title>
+	<style type="text/css">
+		canvas{
+			border: 1px solid black;
+		}
+		body{
+			margin: 0;
+		}
+	</style>
+</head>
+<body>
+	<canvas></canvas>
+	<script type="text/javascript">
+		var canvas = document.querySelector('canvas');		
+		canvas.width = window.innerWidth;
+		canvas.height = window.innerHeight;
+
+		var c = canvas.getContext('2d');
+
+		var x = 200;
+		var f = true;
+		console.log(innerHeight);
+		console.log(innerWidth);
+		function animate(){
+			
+			requestAnimationFrame(animate);
+			c.beginPath();
+			c.clearRect(0, 0, innerWidth, innerHeight);
+			c.arc(x, 200, 30, 0, Math.PI*2, false);
+			c.strokeStyle = "blue";
+			c.stroke();
+			if(f==true){
+				x+=1;
+			}
+			else{
+				x-=1;
+			}
+
+			if(x==innerWidth-50){
+				f=false;
+			}
+			else if(x==0+50){
+				f=true;
+			}
+
+		}
+		animate();
+	</script>
+</body>
+</html>
