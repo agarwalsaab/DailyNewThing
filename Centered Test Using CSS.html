@@ -1,17 +1,35 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Centered Text using CSS</title>
+	<title>Testing Phase</title>
 	<style type="text/css">
 		body{
-			height: 100vh;
+			font-size: 50px;
+			text-align: center;
+			background-color: black;
 			width: 100%;
+			height: 100vh;
+			margin:0;
+			padding: 0;
 		}
 		div{
-			height: 100%;
+			position: relative;
+			margin: auto;
 			width: 100%;
+			height: 100%;
+			padding: 5px;			
 		}
-		p{
+		#one{
+			background-color: #4cf6ff;
+		}
+		#two{
+			background-color: #ffc282;
+			transform: translate;
+		}
+		#three{
+			background-color: #4286f4;
+		}
+		p{	
 			margin: 0;
   			position: absolute;
   			top: 50%;
@@ -21,8 +39,8 @@
 	</style>
 </head>
 <body>
-	<div>
-		<p>Miss You <3</p>
-	</div>
+	<div id="one"><p>Div1</p></div>
+	<div id="two"><p>Div2</p></div>
+	<div id="three"><p>Div3</p></div>
 </body>
 </html>
