@@ -1,0 +1,33 @@
+body{
+	background-color: #ffe83d;
+	font-size: 20px;
+}
+ul{
+	margin: 0px;
+	padding: 0px;
+}
+ul li{
+	width: 200px;
+	height: 40px;
+	float: left;
+	list-style-type: none;
+	background-color: black;
+	text-align: center;
+	opacity: 0.8;
+	margin-right: 2px;
+}
+ul li a{
+	line-height: 40px;
+	text-decoration: none;
+	color: white;
+
+}
+ul li ul li:hover{
+	background-color: tomato;
+}
+ul li ul li{
+	display: none;
+}
+ul li:hover ul li{
+	display: block;
+}
